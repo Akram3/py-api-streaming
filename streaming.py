@@ -10,6 +10,7 @@ To show heartbeat, replace [options] by -b or --displayHeartBeat
 
 import requests
 import json
+import os 
 
 from optparse import OptionParser
 
@@ -24,9 +25,9 @@ def connect_to_stream():
 
     # Replace the following variables with your personal ones
     domain = 'stream-fxpractice.oanda.com'
-    access_token = 'ACCESS-TOKEN'
-    account_id = '1234567'
-    instruments = "EUR_USD,USD_CAD"
+    access_token = os.getenv('practice_access_token')
+    account_id = os.getenv('practice_number')
+    instruments = "EUR_USD"
 
     try:
         s = requests.Session()
