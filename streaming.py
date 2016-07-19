@@ -47,7 +47,7 @@ def connect_to_stream():
 def demo(displayHeartbeat):
     response = connect_to_stream()
     if response.status_code != 200:
-        print response.text
+        print(response.text)
         return
     for line in response.iter_lines(1):
         if line:
@@ -58,10 +58,10 @@ def demo(displayHeartbeat):
                 return
             
             if displayHeartbeat:
-                print line
+                print(line)
             else:
                 if msg.has_key("instrument") or msg.has_key("tick"):
-                    print line
+                    print(line)
 
 def main():
     usage = "usage: %prog [options]"
