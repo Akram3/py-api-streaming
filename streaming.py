@@ -26,7 +26,7 @@ def connect_to_stream():
     # Replace the following variables with your personal ones
     domain = 'stream-fxpractice.oanda.com'
     access_token = os.getenv('practice_access_token')
-    account_id = 'os.getenv("practice_number")
+    account_id = os.getenv("practice_number")
     instruments = "EUR_USD"
 
     try:
