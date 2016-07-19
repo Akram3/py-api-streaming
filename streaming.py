@@ -42,7 +42,7 @@ def connect_to_stream():
         return resp
     except Exception as e:
         s.close()
-        print "Caught exception when connecting to stream\n" + str(e) 
+        print("Caught exception when connecting to stream\n" + str(e))
 
 def demo(displayHeartbeat):
     response = connect_to_stream()
@@ -54,7 +54,7 @@ def demo(displayHeartbeat):
             try:
                 msg = json.loads(line)
             except Exception as e:
-                print "Caught exception when converting message into json\n" + str(e)
+                print("Caught exception when converting message into json\n" + str(e))
                 return
             
             if displayHeartbeat:
